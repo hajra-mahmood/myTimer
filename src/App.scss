@@ -1,0 +1,323 @@
+@font-face {
+  font-family: clock;
+  src: url("./calculator.ttf");
+}
+@font-face {
+  font-family: alice ;
+  src: url("./aliceee.ttf");
+}
+@font-face {
+  font-family: dreams ;
+  src: url("./dreams.ttf");
+}
+
+body {
+box-sizing: border-box;
+font-size: 20px;
+text-align: center;
+padding: 0px 15px;
+margin: 15px auto;
+background-color: #a192db;
+background-image: url("https://d2r55xnwy6nx47.cloudfront.net/uploads/2021/08/Clocks-Time-Physics_2880_Lede.jpg");
+background-size: 1423px;
+background-repeat: no-repeat;
+padding-top: 50px;
+font-family: alice;
+
+
+}
+.break-session-length{
+  // border: 3px solid yellow;
+  display: flex;
+  justify-content: center;
+padding: 10px;
+font-family: dreams;
+}
+h1{
+  font-size: 80px;
+}
+
+.break-box, .session-box{
+  // border: 3px solid green;
+  width: 35%;
+background-color: #b06888b7;
+padding: 10px;
+box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+button{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.wrapper{
+  
+  border: 10px solid rgb(22, 78, 100);
+  padding: 20px;
+  margin: 15px auto;
+  position: relative;
+  top: 30%;
+min-height: 85vh;
+  max-width: 1075px;
+  //
+  margin-top: -10px;
+    background: #6c5b7b90;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  border: 2px solid #f1a67a;
+  
+}
+#time-left, #session-length, #break-length{
+  font-family: clock ;
+  
+}
+.timer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+
+
+}
+
+//length, width, background of .timer and span
+
+#time-left{ //time
+  font-size: 50px;
+  grid-area: 2 / 1 / 3 / 2;
+
+}
+
+
+#timer-label{ //session/break title
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 9;
+    // color: red; 
+    
+  }
+  
+  #timer-label, #time-left {
+    border: 3px solid #f1a67a;
+    // height: auto;
+    color: rgb(3, 6, 129);
+    background-color: rgb(225, 22, 61);
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+    // z-index: 8;
+    background: linear-gradient(251deg, rgba(0,180,99,1) 0%, rgba(17,226,160,0.6615021008403361) 48%, rgba(3,199,48,0.5690651260504201) 100%);
+border-radius: 5px;
+    
+  }
+  .timer-wrapper{
+    // border: 3px solid pink;
+    padding: 10px;
+    height: 306px;
+    width: 100%;
+    position: absolute;
+    right: 0px;
+    // top: 25%;
+    
+
+  }
+  //code start
+  .timer:before{
+    content: '';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background: rgba(255,255,255,0.1);
+    transition:0.5s;
+    pointer-events: none;
+  }
+  .timer:hover:before{
+    left:-50%;
+    transform: skewX(-5deg);
+  }
+.timer{
+  position: absolute;
+  // top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 260px;
+  background: #111845a6;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  border: 2px solid #2a3cad;
+  color: white;
+  padding: 20px;
+  //
+
+  top: 137px;
+  // left:15px;
+  // right:15px;
+  // bottom:15px;
+  border:1px solid #f0a591;
+  padding:20px;
+  text-align:center;
+  box-shadow: 0 5px 10px rgba(9,0,0,0.5);
+}
+.timer span{
+  position: absolute;
+  top: 0%;
+  right: 0;
+  // width: 100%;
+  // height: 100%;
+  display: block;
+  box-sizing: border-box;
+
+}
+.timer span:nth-child(1)
+{
+  transform:rotate(0deg);
+  height: 250px;
+  width: 522px ;  
+  // border: 5px solid green;
+}
+
+.timer span:nth-child(2)
+{
+  transform:rotate(90deg);
+  right: 107px;
+  height: 510px;
+  width: 297px;
+  margin-top: -110px;
+  
+}
+
+.timer span:nth-child(3)
+{
+  transform:rotate(180deg);
+  //  border: 2px solid red;
+  height: 297px;
+  width: 522px ; 
+ top: -37px;
+
+}
+
+.timer span:nth-child(4)
+{
+  transform:rotate(270deg);
+  // border: 5px dotted green;
+  // width: 800px;
+  right: 130px;
+   height: 510px;
+   width: 297px;
+   margin-top: -110px;
+}
+
+.timer span:before
+{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 2px;
+  background: #a987a0;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+  transform:scaleX(0);
+  transform-origin: left;
+  }
+  50%
+  {
+    transform:scaleX(1);
+  transform-origin: left;
+  }
+  50.1%
+  {
+    transform:scaleX(1);
+  transform-origin: right;
+    
+  }
+  
+  100%
+  {
+    transform:scaleX(0);
+  transform-origin: right;
+    
+  }
+  
+  
+} 
+.content, .buttons{
+  position:absolute;
+  top:15px;
+  left:15px;
+  right:15px;
+  bottom:15px;
+  border:1px solid #f0a591;
+  padding:20px;
+  text-align:center;
+  width: 94%;
+  box-shadow: 0 5px 10px rgba(9,0,0,0.5);
+}
+.buttons{
+  // border: 3px solid yellow;
+  top: 175px;
+  left: 23%;
+  right: 0px;
+  
+  height: 23%;
+  width: 55%;
+  padding-bottom: 20px;
+  background-color: #b06888b7;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+}
+// button code start 
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  // padding: 0.3rem 0.5rem;
+  // font-weight: 700;
+  // font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+  background-color: #3b2f52;
+  color: #efb18a;
+}
+.btn {
+  border-color: transparent;
+ // transition: background-color 0.3s ease-in-out;
+}
+  
+.btn:hover {
+  background-color: #111845a6;
+}
+.timebtn{
+  margin-top: -10px;
+  
+}
+
+.btn:hover{
+  background-color: #ad728f;
+}
+.fa-play{
+  margin-right: 7px;
+}
+
+.fancy-border {
+  border: 25px solid #B88846;
+  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 25;
+}
+#timer-label{
+  font-family: clock;
+  letter-spacing: 4px;
+}
+
+//button code end
+ 
+  //code end
+  //container - timer wrapper
+  // box - timer
